@@ -1,4 +1,6 @@
 import DarkAndLightBtn from "@/components/DarkAndLightBtn";
+import SearchAndBtn from "@/components/SearchAndBtn";
+
 
 export default function Home() {
   return (
@@ -8,6 +10,12 @@ export default function Home() {
         <section className="flex justify-between gap-3">
           <p className="text-xl font-semibold">devfinder</p>
           <DarkAndLightBtn />
+        </section>
+
+        {/* search and main */}
+        <section>
+          {/* search and btn */}
+          <SearchAndBtn/>
         </section>
       </div>
     </div>
