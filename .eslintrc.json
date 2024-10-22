@@ -1,3 +1,6 @@
 {
+  "rules": {
+    "react/no-unescaped-entities": "true"
+  },
   "extends": ["next/core-web-vitals", "next/typescript"]
 }
