@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import QueryProvider from "@/components/QueryProvider";
 
 const space_mono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
-
-const queryClient = new QueryClient();
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${space_mono.className} antialiased`}>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider attribute="class">{children}</ThemeProvider>
-        </QueryClientProvider>
+        <ThemeProvider attribute="class">
+          <QueryProvider>{children}</QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
