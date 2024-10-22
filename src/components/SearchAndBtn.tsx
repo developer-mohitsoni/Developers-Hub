@@ -1,14 +1,31 @@
 import { IoSearch } from "react-icons/io5";
 
-const SearchAndBtn = () => {
+type Props = {
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
+};
+
+const SearchAndBtn = (props: Props) => {
   return (
-    <form className="flex items-center gap-2 w-full">
+    <form
+      className="flex items-center gap-2 w-full shadow-md focus-within:ring-2 dark:focus-within:ring-gray-200 focus-within:ring-slate-800 p-2 rounded-lg dark:bg-slate-800 bg-white"
+      onSubmit={props.onSubmit}
+    >
       <section className="flex items-center h-full w-full gap-2">
         {/* search icon */}
-        <IoSearch className="text-2xl" />
-        <input className="w-full" type="text" />
+        <IoSearch className="text-2xl text-blue-500" />
+        <input
+          className="w-full h-[40px] rounded bg-inherit outline-none px-1 text-sm"
+          value={props.value}
+          onChange={props.onChange}
+          placeholder="Search Github Username..."
+          type="text"
+        />
       </section>
-      <button>Search</button>
+      <button className="rounded-lg bg-blue-500 px-5 py-2 text-white hover:opacity-80 transition-all">
+        Search
+      </button>
     </form>
   );
 };
