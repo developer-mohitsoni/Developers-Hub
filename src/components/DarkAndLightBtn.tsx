@@ -4,9 +4,7 @@ import { useTheme } from "next-themes";
 import { FaSun } from "react-icons/fa";
 import { RiMoonClearLine } from "react-icons/ri";
 
-type Props = {};
-
-const DarkAndLightBtn = (props: Props) => {
+const DarkAndLightBtn = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   const toggleDark = () => {
