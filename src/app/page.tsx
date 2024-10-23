@@ -15,7 +15,7 @@ import { GitHubUser } from "@/User-Types";
 import { useState } from "react";
 
 export default function Home() {
-  const [userName, setUserName] = useState("developer-mohitsoni");
+  const [userName, setUserName] = useState("octocat");
 
   const { isLoading, error, data, refetch } = useQuery<GitHubUser>({
     queryKey: ["github"],
@@ -150,7 +150,7 @@ export default function Home() {
                     {data?.blog ? (
                       <Link
                         title={data?.blog}
-                        className="hover:underline opacity-60 max-w-[200px] overflow-hidden text-ellipsis"
+                        className="hover:underline opacity-60 max-w-[220px] overflow-hidden text-ellipsis truncate"
                         href={data?.blog ?? "#"}
                       >
                         {data?.blog}
@@ -166,7 +166,7 @@ export default function Home() {
                     {data?.url ? (
                       <Link
                         title={data?.url}
-                        className="hover:underline opacity-60 max-w-[200px] overflow-hidden text-ellipsis"
+                        className="hover:underline opacity-60 max-w-[220px] overflow-hidden text-ellipsis truncate"
                         href={data?.url ?? "#"}
                       >
                         {data?.url}
